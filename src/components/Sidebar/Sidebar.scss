@@ -1,0 +1,68 @@
+.sidebar-left {
+    width: 20%;
+    .item-sidebar {
+        display: flex;
+        margin: 2rem 1rem;
+        font-size: 1.2rem;
+        align-items: center;
+        color: #fff;
+        h4 {
+            font-weight: 450;
+            margin-left: 1rem;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            color: #3da2e2;
+        }
+    }
+}
+.sidebar-right {
+    margin: 2rem 1rem 1rem 0;
+    width: 20%;
+    h3 {
+        color: #ccc;
+    }
+    .request-container {
+        margin: 1rem;
+        margin-top: 2rem;
+        height: 8rem;
+        .header-request {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: 1rem;
+            border-top: 1px solid rgb(100, 100, 100);
+            padding-top: 0.5rem;
+            .avatar {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            h4 {
+                color: white;
+                margin-left: 1rem;
+            }
+        }
+        .bottom-request {
+            padding: 1rem;
+
+            .confirm-btn {
+                border: none;
+                padding: 0.3rem 0.7rem;
+                font-size: 1.1rem;
+                background: #3982e4;
+                color: #fff;
+                border-radius: 0.4rem;
+                cursor: pointer;
+            }
+            .remove-btn {
+                @extend .confirm-btn;
+                background: rgb(63, 63, 63);
+                color: #fff;
+                margin-left: 1rem;
+            }
+        }
+    }
+}

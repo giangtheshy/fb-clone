@@ -1,0 +1,24 @@
+.login {
+    width: 100%;
+    .login-logo {
+        width: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 10rem auto;
+        img {
+            width: 10rem;
+        }
+    }
+    button {
+        display: block;
+        margin: 0 40%;
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: #1977f3;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+}

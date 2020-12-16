@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: #18191a;
+}
+main {
+    .avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .content-app {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .content-center {
+            width: 45%;
+        }
+    }
+}

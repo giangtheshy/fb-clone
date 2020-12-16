@@ -1,0 +1,62 @@
+.messenge-container {
+    width: 100%;
+    background-color: rgb(46, 45, 45);
+    padding: 1rem;
+    border-radius: 1rem;
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .input-text {
+            width: 60%;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 1rem;
+            background-color: rgb(83, 83, 83);
+            padding: 0.3rem 1rem;
+            color: #ccc;
+        }
+        .input-url {
+            @extend .input-text;
+            width: 30%;
+        }
+        .submit {
+            display: none;
+        }
+    }
+    .messenge-sender-bottom {
+        display: flex;
+        justify-content: space-evenly;
+        border-top: 1px solid rgb(78, 78, 78);
+        padding-top: 1rem;
+        margin-top: 1rem;
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        .live {
+            display: flex;
+            align-items: center;
+            color: gray;
+            .icon {
+                margin-right: 0.4rem;
+                color: #f23e5c;
+                font-size: 2rem;
+            }
+        }
+        .image {
+            @extend .live;
+            .icon {
+                color: #58c472;
+            }
+        }
+        .feeling {
+            @extend .live;
+            .icon {
+                color: #f8c03e;
+            }
+        }
+    }
+}

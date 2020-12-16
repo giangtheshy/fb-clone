@@ -1,0 +1,57 @@
+.post {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: rgb(46, 45, 45);
+    padding: 1rem;
+    border-radius: 1rem;
+    .post-header {
+        display: flex;
+        align-items: center;
+        h4 {
+            margin-left: 1rem;
+            color: #eee;
+        }
+    }
+    .time-post {
+        margin-left: 3rem;
+        color: gray;
+        padding-bottom: 1rem;
+        margin-top: -0.5rem;
+    }
+    .text {
+        color: #eee;
+        margin: 1rem 0;
+        font-size: 1.2rem;
+    }
+    .img {
+        img {
+            width: 100%;
+            height: 80%;
+        }
+    }
+    .option {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+        padding: 0.5rem 0;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        width: 80%;
+        margin: 1rem auto;
+        .like {
+            display: flex;
+            color: rgb(160, 159, 159);
+            font-size: 1.3rem;
+            .icon {
+                margin-right: 0.5rem;
+                font-size: 1.6rem;
+            }
+        }
+        .comment {
+            @extend .like;
+        }
+        .share {
+            @extend .like;
+        }
+    }
+}
