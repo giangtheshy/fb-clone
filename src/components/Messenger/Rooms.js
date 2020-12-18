@@ -16,28 +16,22 @@ const Rooms = () => {
                 db.collection("rooms")
                     .doc(`${room}`)
                     .onSnapshot((doc) => {
-                        // if (!listRoom.some((item) => item.id === doc.data().id)) {
-                        //     setListRoom((listRoom) => [...listRoom, doc.data()]);
-
-                        // }
-
-                        // setListRoom((listRoom) => [...listRoom, doc.data()]);
                         temp.push(doc.data());
                     });
             });
-            // setListRoom(temp);
         }
         return temp;
     }, [collectionRoom]);
     useEffect(() => {
         setListRoom(fetchRoomList());
+        console.log(listRoom);
     }, [fetchRoomList]);
-    console.log(listRoom.map((room) => console.log(room)));
-    if (!listRoom.length) {
-        console.log([listRoom][0]);
-        return <h1>error</h1>;
-    }
     console.log(listRoom);
+    if (listRoom.length === 0) {
+        console.log(listRoom);
+
+        return <h1>hello</h1>;
+    }
     return (
         <aside className="chat-section">
             <section className="minimize-section">
