@@ -1,15 +1,33 @@
 import React from "react";
 import "./Login.scss";
-import { auth, provider } from "../../firebase";
+import db, { auth, provider } from "../../firebase";
 import { useGlobalContext } from "../../context";
 
 const Login = () => {
-    const { setLoginUser } = useGlobalContext();
+    const { setLoginUser, users } = useGlobalContext();
+
     const signIn = () => {
         auth.signInWithPopup(provider)
-            .then((result) => setLoginUser(result.user))
+            .then(async (result) => {
+                const { uid, photoURL, displayName } = result.user;
+                const userLists = db.collection("users").doc(`${uid}`);
+                const doc = await userLists.get();
+                if (!doc.exists) {
+                    userLists.set({
+                        uid,
+                        photoURL,
+                        displayName,
+                        friends: [],
+                        room: [],
+                        others: users.filter((item) => item.uid !== uid),
+                    });
+                }
+
+                setLoginUser(result.user);
+            })
             .catch((err) => console.log(err));
     };
+
     return (
         <div className="login">
             <div className="login-logo">

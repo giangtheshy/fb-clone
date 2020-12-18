@@ -7,6 +7,7 @@ import MessengeSender from "./components/MessengeSender/MessengeSender";
 import Feed from "./components/Feed/Feed";
 import { useGlobalContext } from "./context";
 import Login from "./components/Login/Login";
+import Rooms from "./components/Messenger/Rooms";
 const App = () => {
     const { user } = useGlobalContext();
     return (
@@ -23,6 +24,7 @@ const App = () => {
                         </div>
                         <SidebarRight />
                     </div>
+                    <Rooms />
                 </>
             ) : (
                 <Login />

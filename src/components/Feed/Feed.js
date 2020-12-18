@@ -10,7 +10,7 @@ const Feed = () => {
     return (
         <section className="feed-container">
             {dataPost.map((item) => {
-                return <Post key={item.id} {...item.data} />;
+                return <Post key={item.id} {...item.data} id={item.id} />;
             })}
         </section>
     );

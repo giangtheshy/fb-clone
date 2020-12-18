@@ -9,15 +9,19 @@ const MessengeSender = () => {
     const { user } = useGlobalContext();
     const [valueText, setValueText] = useState("");
     const [valueUrl, setValueUrl] = useState("");
+    const [showInputUrl, setShowInputUrl] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         db.collection("posts").add({
+            uid: user.uid,
             avatar: user.photoURL,
             image: valueUrl,
             text: valueText,
             username: user.displayName,
             time: new Date().getTime(),
+            comments: [],
+            like: 0,
         });
         setValueText("");
         setValueUrl("");
@@ -33,13 +37,15 @@ const MessengeSender = () => {
                     className="input-text"
                     placeholder="What do you think?"
                 />
-                <input
-                    type="text"
-                    value={valueUrl}
-                    onChange={(e) => setValueUrl(e.target.value)}
-                    className="input-url"
-                    placeholder="image URL"
-                />
+                {showInputUrl && (
+                    <input
+                        type="text"
+                        value={valueUrl}
+                        onChange={(e) => setValueUrl(e.target.value)}
+                        className="input-url"
+                        placeholder="image URL"
+                    />
+                )}
                 <button className="submit" type="submit">
                     submit
                 </button>
@@ -51,7 +57,7 @@ const MessengeSender = () => {
                     </span>
                     <h4>Live stream</h4>
                 </div>
-                <div className="image">
+                <div className="image" onClick={() => setShowInputUrl(!showInputUrl)}>
                     <span className="icon">
                         <BsImages />
                     </span>

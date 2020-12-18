@@ -3,6 +3,20 @@
     margin: 0;
     outline: none;
     box-sizing: border-box;
+    font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+html {
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #888;
+        border-radius: 1rem;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #535353;
+        border-radius: 1rem;
+    }
 }
 body {
     background-color: #18191a;
@@ -15,11 +29,10 @@ main {
         object-fit: cover;
     }
     .content-app {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        width: 40%;
+        margin: 0 auto;
         .content-center {
-            width: 45%;
+            width: 100%;
         }
     }
 }

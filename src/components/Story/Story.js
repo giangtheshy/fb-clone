@@ -6,7 +6,7 @@ const Story = () => {
             <div
                 className="story"
                 style={{
-                    backgroundImage: `url(https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-9/130721613_718352745750399_1208026609622347259_n.jpg?_nc_cat=102&ccb=2&_nc_sid=825194&_nc_ohc=Xl7aOEUBOsQAX9Sa_Tt&_nc_ht=scontent.fvca1-1.fna&oh=b790cc9414454de0cda39bf2486c9f01&oe=5FFD86E2)`,
+                    backgroundImage: `url(https://images.pexels.com/photos/5716807/pexels-photo-5716807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
                 }}
             >
                 <img
@@ -14,12 +14,12 @@ const Story = () => {
                     alt="avatar"
                     className="avatar"
                 />
-                <h4>Giang</h4>
+                <h4>John</h4>
             </div>
             <div
                 className="story"
                 style={{
-                    backgroundImage: `url(https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-9/130721613_718352745750399_1208026609622347259_n.jpg?_nc_cat=102&ccb=2&_nc_sid=825194&_nc_ohc=Xl7aOEUBOsQAX9Sa_Tt&_nc_ht=scontent.fvca1-1.fna&oh=b790cc9414454de0cda39bf2486c9f01&oe=5FFD86E2)`,
+                    backgroundImage: `url(https://images.pexels.com/photos/5799683/pexels-photo-5799683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
                 }}
             >
                 <img
@@ -27,33 +27,33 @@ const Story = () => {
                     alt="avatar"
                     className="avatar"
                 />
-                <h4>Giang</h4>
+                <h4>Smith</h4>
             </div>
             <div
                 className="story"
                 style={{
-                    backgroundImage: `url(https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-9/130721613_718352745750399_1208026609622347259_n.jpg?_nc_cat=102&ccb=2&_nc_sid=825194&_nc_ohc=Xl7aOEUBOsQAX9Sa_Tt&_nc_ht=scontent.fvca1-1.fna&oh=b790cc9414454de0cda39bf2486c9f01&oe=5FFD86E2)`,
+                    backgroundImage: `url(https://images.pexels.com/photos/5878857/pexels-photo-5878857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
                 }}
             >
                 <img
-                    src="https://images.pexels.com/photos/5878830/pexels-photo-5878830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    src="https://images.pexels.com/photos/4118749/pexels-photo-4118749.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                     alt="avatar"
                     className="avatar"
                 />
-                <h4>Giang</h4>
+                <h4>Anna</h4>
             </div>
             <div
                 className="story"
                 style={{
-                    backgroundImage: `url(https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-9/130721613_718352745750399_1208026609622347259_n.jpg?_nc_cat=102&ccb=2&_nc_sid=825194&_nc_ohc=Xl7aOEUBOsQAX9Sa_Tt&_nc_ht=scontent.fvca1-1.fna&oh=b790cc9414454de0cda39bf2486c9f01&oe=5FFD86E2)`,
+                    backgroundImage: `url(https://images.pexels.com/photos/3812861/pexels-photo-3812861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
                 }}
             >
                 <img
-                    src="https://images.pexels.com/photos/5878830/pexels-photo-5878830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    src="https://images.pexels.com/photos/4519256/pexels-photo-4519256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     alt="avatar"
                     className="avatar"
                 />
-                <h4>Giang</h4>
+                <h4>Peter</h4>
             </div>
         </section>
     );
