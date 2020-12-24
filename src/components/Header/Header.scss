@@ -1,154 +1,337 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 3rem;
+  background-color: #000;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgb(83, 83, 83);
+  box-shadow: 0 0 1px #bbb;
+  .header-left {
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    height: 3rem;
-    background-color: #000;
-    .header-left {
-        display: flex;
-        align-items: center;
-        margin-left: 0.5rem;
-        img {
-            width: 2.5rem;
+    align-items: center;
+    width: 30%;
+    img {
+      width: 2.5rem;
+    }
+    form {
+      width: 10rem;
+    }
+    label {
+      width: 10rem;
+      margin-left: 2rem;
+      position: relative;
+      &::after {
+        content: "\f002";
+        position: absolute;
+        font-weight: 900;
+        font-family: "Font Awesome 5 Free";
+        top: 0;
+        left: 0.5rem;
+        color: gray;
+      }
+      input {
+        background-color: #3a3b3c;
+        border: none;
+        border-radius: 999px;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 0.3rem 2rem;
+        color: gray;
+        width: 30%;
+        transition: all 0.3s ease-in-out;
+        &:focus {
+          width: 200%;
+        }
+      }
+    }
+  }
+  .btn-bar {
+    align-items: center;
+    display: none;
+  }
+  .icon-bar {
+    font-size: 1.8rem;
+    padding: 0 2rem;
+    color: gray;
+    transition: all 0.3s ease-in-out;
+    border-radius: 1rem;
+    &:hover {
+      background: #3a3b3c;
+    }
+    &.active {
+      color: #2d88ff;
+      border-bottom: 3px solid #2d88ff;
+      border-radius: unset;
+      &:hover {
+        background: unset;
+      }
+    }
+  }
+  .header-center {
+    display: flex;
+    flex: 0.7;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      @extend .icon-bar;
+    }
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    h3 {
+      color: #fff;
+      margin: 0 0.5rem;
+      font-weight: 400;
+      font-size: 1.2rem;
+      width: 8rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .icon {
+      color: rgb(255, 253, 253);
+      font-size: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      margin-right: 1rem;
+      background-color: rgb(56, 56, 56);
+      border-radius: 50%;
+      position: relative;
+      &.active {
+        color: #4292ff;
+        background: #3c4d63;
+      }
+      .icon__child {
+        cursor: pointer;
+      }
+      .mess-box {
+        @extend .option-box;
+        right: -7rem !important;
+        height: unset !important;
+        max-height: 80vh;
+        overflow: auto;
+        .header-mess {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          h2 {
+            font-size: 1.7rem;
+          }
+          .icon-tool-mess {
+            font-size: 1.1rem;
+            border-radius: 50%;
+            padding: 0.4rem 0.5rem;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            &:hover {
+              background-color: #3a3b3c;
+            }
+          }
         }
         form {
-            width: 10rem;
+          width: 100%;
+          display: flex;
+          input {
+            width: 100%;
+            margin: 1rem;
+            background: #4e4f50;
+            border: none;
+            font-size: 1.1rem;
+            padding: 0.3rem 1rem;
+            border-radius: 11rem;
+            color: #ccc;
+          }
         }
-        label {
-            width: 10rem;
-            margin-left: 2rem;
-            position: relative;
-            &::after {
-                content: "\f002";
-                position: absolute;
-                font-weight: 900;
-                font-family: "Font Awesome 5 Free";
-                top: 0;
-                left: 0.5rem;
-                color: gray;
+        .message-container {
+          .message-box {
+            display: flex;
+            margin: 1rem 0;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.3s ease-in-out;
+            border-radius: 1rem;
+            &:hover {
+              background: #3a3939;
             }
-            input {
-                background-color: rgb(238, 238, 238);
-                border: none;
-                border-radius: 999px;
-                font-size: 1.4rem;
-                width: 100%;
-                padding-left: 2rem;
+            .avatar {
+              width: 3.7rem;
+              height: 3.7rem;
+              margin-right: 1rem;
+              object-fit: cover;
             }
+            .mess-right {
+              h4 {
+                font-size: 1.1rem;
+                font-weight: 400;
+                padding: 0.3rem 0;
+              }
+              .mess {
+                font-size: 0.9rem;
+                color: rgb(153, 151, 151);
+                width: 18rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
         }
-    }
-    .header-center {
-        display: flex;
-        flex: 0.7;
-        align-items: center;
-        justify-content: center;
-
-        .icon {
+      }
+      .notifications-box {
+        @extend .option-box;
+        right: -4rem !important;
+        height: unset !important;
+        max-height: 80vh;
+        overflow: auto;
+        .notification-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+          .icon-noti {
             font-size: 1.8rem;
-            padding: 0 2rem;
-            color: gray;
-
-            &.active {
-                color: #2d88ff;
-                border-bottom: 3px solid #2d88ff;
-            }
-        }
-    }
-    .header-right {
-        display: flex;
-        align-items: center;
-        h3 {
-            color: #fff;
-            margin: 0 0.5rem;
-            font-weight: 400;
-            font-size: 1.2rem;
-        }
-        .icon {
-            color: rgb(255, 253, 253);
-            font-size: 1.5rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            display: grid;
-            place-items: center;
-            margin-right: 1rem;
-            background-color: rgb(56, 56, 56);
+            transition: all 0.3s ease-in-out;
             border-radius: 50%;
-            position: relative;
-            .option-box {
-                position: absolute;
-                top: 3rem;
-                right: -1rem;
-                display: flex;
-                flex-direction: column;
-                width: 20rem;
-                height: 18rem;
-                background-color: #242526;
-                z-index: 2;
-                padding: 1rem;
-                border-radius: 1rem;
-                .info {
-                    display: flex;
-                    align-items: center;
-                    .avatar__profile {
-                        width: 5rem;
-                        object-fit: cover;
-                        border-radius: 50%;
-                    }
-                    div {
-                        h3 {
-                            font-weight: bold;
-                            font-size: 1.3rem;
-                            width: 12rem;
-                            overflow: hidden;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
-                        }
-                        button {
-                            border: none;
-                            background: transparent;
-                            color: #bbb;
-
-                            cursor: pointer;
-                            padding: 0.3rem 3rem;
-                            border-radius: 1rem;
-                            transition: all 0.3s ease-in-out;
-                            &:hover {
-                                background-color: #3a3b3c;
-                            }
-                        }
-                    }
-                }
-                .option-btn {
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 2rem;
-                    button {
-                        padding: 1rem;
-                        border-radius: 1rem;
-                        transition: all 0.3s ease-in-out;
-                        display: flex;
-                        align-items: center;
-                        background: transparent;
-                        border: none;
-                        color: #bbb;
-                        font-size: 1.2rem;
-                        text-align: center;
-                        cursor: pointer;
-                        .icon {
-                            background: transparent;
-                        }
-                        &:hover {
-                            background-color: #3a3b3c;
-                        }
-                    }
-                }
+            padding: 0.1rem 0.2rem;
+            cursor: pointer;
+            &:hover {
+              background-color: #3a3939;
             }
+          }
         }
+        .notifications-container {
+          display: flex;
+          flex-direction: column;
+          .notification-center {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            transition: all 0.3s ease-in-out;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            &:hover {
+              background: #3a3b3c;
+            }
+            .avatar {
+              width: 3.8rem;
+              height: 3.8rem;
+              margin-right: 1rem;
+            }
+            .notification-content {
+              .content-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h4 {
+                  font-size: 1rem;
+                  color: #36adf7;
+                  width: 13rem;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                h6 {
+                  font-size: 0.7rem;
+                  color: gray;
+                  margin-top: 0.8rem;
+                  padding-bottom: 0.5rem;
+                }
+              }
+              p {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+      .option-box {
+        position: absolute;
+        top: 3rem;
+        right: -1rem;
+        display: flex;
+        flex-direction: column;
+        width: 25rem;
+        height: 18rem;
+        background-color: #242526;
+        z-index: 2;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        box-shadow: -1px 0px 3px #ccc;
+        animation: dropdown 0.4s ease-in-out;
+        color: #ccc !important;
+        .info {
+          display: flex;
+          align-items: center;
+          .avatar__profile {
+            width: 5rem;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 2rem;
+          }
+          div {
+            h3 {
+              font-weight: bold;
+              font-size: 1.3rem;
+              width: 12rem;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+            button {
+              border: none;
+              background: transparent;
+              color: #bbb;
+
+              cursor: pointer;
+              padding: 0.3rem 3rem;
+              border-radius: 1rem;
+              transition: all 0.3s ease-in-out;
+              &:hover {
+                background-color: #3a3b3c;
+              }
+            }
+          }
+        }
+        .option-btn {
+          display: flex;
+          flex-direction: column;
+          margin-top: 2rem;
+          button {
+            padding: 1rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            background: transparent;
+            border: none;
+            color: #bbb;
+            font-size: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            .icon {
+              background: transparent;
+            }
+            &:hover {
+              background-color: #3a3b3c;
+            }
+          }
+        }
+      }
     }
-    .avatar {
-        width: 2rem;
-        height: 2rem;
-        object-fit: cover;
-        border-radius: 50%;
-    }
+  }
+  .avatar {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }

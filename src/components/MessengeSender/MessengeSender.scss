@@ -3,7 +3,7 @@
     background-color: rgb(46, 45, 45);
     padding: 1rem;
     border-radius: 1rem;
-    form {
+    .form-input {
         width: 100%;
         display: flex;
         justify-content: space-evenly;
@@ -53,8 +53,22 @@
             border-radius: 1rem;
             transition: all 0.3s ease-in-out;
             cursor: pointer;
+            position: relative;
+            .progress {
+                position: absolute;
+                top: -0.8rem;
+                left: 2rem;
+                color: lightgreen;
+                font-weight: bold;
+            }
             .icon {
                 color: #58c472;
+                position: relative;
+                #image {
+                    position: absolute;
+                    top: 0;
+                    z-index: -1;
+                }
             }
             &:hover {
                 background-color: #3a3b3c;

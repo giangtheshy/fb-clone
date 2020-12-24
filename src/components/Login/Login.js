@@ -20,6 +20,7 @@ const Login = () => {
                         friends: [],
                         room: [],
                         others: users.filter((item) => item.uid !== uid),
+                        cart: [],
                     });
                 }
 

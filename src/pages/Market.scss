@@ -1,0 +1,205 @@
+.market-section {
+    width: 100%;
+    .title-market {
+        text-align: center;
+        color: #ccc;
+        font-size: 3rem;
+    }
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-gap: 1rem;
+        padding: 2rem;
+        .product-center {
+            &:hover {
+                background: #3a3b3c;
+                img {
+                    filter: grayscale(10);
+                }
+            }
+            border-radius: 0.5rem;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 3px #bbb;
+            cursor: pointer;
+            &.success {
+                .img-container {
+                    .icon {
+                        display: grid;
+                    }
+                }
+            }
+            .img-container {
+                max-width: 100%;
+                overflow: hidden;
+                position: relative;
+                .icon {
+                    place-items: center;
+                    display: none;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(29, 28, 28, 0.5);
+                    color: lightgreen;
+                    font-size: 5rem;
+                    z-index: 2;
+                }
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 12rem;
+                    border-radius: 0.4rem;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            .product-info {
+                color: #ccc;
+                padding: 0.3rem;
+                .price {
+                    font-size: 1.5rem;
+                    color: rgb(236, 236, 236);
+                }
+                .title {
+                    font-size: 1.1rem;
+                    display: -webkit-box;
+                    max-width: 200px;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    color: #bbb;
+                }
+                .desc {
+                    @extend .title;
+                    -webkit-line-clamp: 3;
+                    font-size: 0.8rem;
+                    color: gray;
+                }
+            }
+        }
+    }
+}
+
+.cart-section {
+    width: 100%;
+    position: relative;
+    .title {
+        color: #ccc;
+        font-size: 3rem;
+        text-align: center;
+    }
+    .item-cart-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-gap: 2rem;
+        padding: 2rem;
+        margin-bottom: 5rem;
+        .item-cart {
+            height: 20rem;
+            padding: 1rem;
+            max-width: 17rem;
+            color: #ccc;
+            display: flex;
+            flex-direction: column;
+            background: #3a3b3c;
+            border-radius: 1rem;
+            box-shadow: 0 0 3px #bbb;
+            &__header {
+                width: 100%;
+                height: 15rem;
+                position: relative;
+                padding-bottom: 0.5rem;
+                .status-item {
+                    position: absolute;
+                    top: 0rem;
+                    right: 0rem;
+                    font-weight: 900;
+                    border-radius: 1rem;
+                    padding: 0.1rem 0.5rem;
+                    color: rgb(0, 209, 0);
+                    background: rgb(56, 87, 56);
+                    &.paid {
+                        color: rgb(185, 185, 0);
+                        background: rgb(112, 112, 72);
+                    }
+                }
+                h3 {
+                    width: 10rem;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                img {
+                    width: 100%;
+                    height: 12rem;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                    margin-top: 1rem;
+                }
+            }
+            &__content {
+                height: 4rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.2rem 0.5rem;
+                border-top: 1px solid gray;
+                .info {
+                    .price {
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                    }
+                    h6 {
+                        text-transform: capitalize;
+                    }
+                }
+                .btn-center {
+                    .remove {
+                        font-size: 2rem;
+                        width: 4rem;
+                        color: rgb(173, 20, 20);
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 2rem;
+                        transition: all 0.3s ease-in-out;
+                        &:hover {
+                            background: rgb(146, 64, 64);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cart-footer {
+        position: fixed;
+        bottom: 2rem;
+        right: 22%;
+        display: flex;
+        .clear {
+            font-size: 1.5rem;
+            background: rgb(180, 64, 64);
+            color: darkred;
+            border: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 3px;
+            padding: 0.3rem 0.7rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                background: rgb(238, 164, 164);
+            }
+        }
+        .checkout {
+            @extend .clear;
+            background: rgb(62, 173, 62);
+            color: darkgreen;
+            margin-left: 1rem;
+            &:hover {
+                background: lightgreen;
+            }
+        }
+    }
+}
