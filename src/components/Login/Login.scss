@@ -1,28 +1,56 @@
 .login {
-    width: 100%;
+  width: 100%;
+  text-align: center;
+  padding-left: 5rem;
+  .login-logo {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    padding-left: 5rem;
-    .login-logo {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        margin: 5rem auto;
-        img {
-            width: 10rem;
-        }
+    margin: 5rem auto;
+    img {
+      width: 10rem;
     }
+  }
+  button {
+    display: block;
+    margin: 0 35%;
+    font-size: 1.4rem;
+    padding: 0.5rem 5rem;
+    border: none;
+    background-color: #277dee;
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login {
     button {
-        display: block;
-        margin: 0 35%;
-        font-size: 1.4rem;
-        padding: 0.5rem 5rem;
-        border: none;
-        background-color: #277dee;
-        color: white;
-        font-weight: bold;
-        border-radius: 1rem;
-        cursor: pointer;
+      margin: 0 30%;
     }
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .login {
+    button {
+      margin: 0 20%;
+    }
+  }
+}
+@media (min-width: 350px) and (max-width: 500px) {
+  .login {
+    button {
+      margin: 0 8%;
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .login {
+    button {
+      margin-left: -2rem;
+    }
+  }
 }
